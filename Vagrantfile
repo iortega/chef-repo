@@ -4,6 +4,11 @@
 Vagrant::Config.run do |config|
 
   config.vm.box = "lucid32"
+  
+  config.vm.customize do |vm|
+    vm.memory_size = 1024
+    vm.name = "CHEF_REPO"
+  end
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -24,6 +29,7 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe "apt"
+    chef.add_recipe "rbenv::system_install"
     # chef.add_role "web"
   
     # You may also specify custom JSON attributes:

@@ -1,0 +1,21 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (1.2.2)
+    git (0.10.0)
+      runit (>= 0.0.0)
+      yum (>= 0.0.0)
+    runit (0.14.2)
+    yum (0.5.2)
+
+PATH
+  remote: site-cookbooks/rbenv-cookbook
+  specs:
+    rbenv (0.9.1)
+      git (>= 0.0.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  git (>= 0)
+  rbenv (>= 0)
+
